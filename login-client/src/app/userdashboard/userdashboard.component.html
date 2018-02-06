@@ -1,0 +1,20 @@
+<h1>Welcome to the user dashboard</h1>  
+<table>
+  <tr>
+    <th>username</th>
+    <th>edit</th>
+    <th>delete</th>
+  </tr>
+  <tr *ngFor='let u of users'>
+    <td>{{u.username}}</td>
+    <td><button>edit</button> </td>
+    <td><button (click)='delete(u._id)'>delete</button></td>
+  </tr>
+</table>
+{{users|json}}
+
+
+
+
+
+

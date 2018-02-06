@@ -1,0 +1,97 @@
+
+
+ 
+  <h1>here is your quiz</h1>
+  
+  <div >
+    
+    
+      <form>
+        <div *ngIf="questions[0]">
+          <p>1:{{questions[0].prompt}}</p>
+          <label>{{questions[0].answers[0]}} </label>
+          <input type="radio" name="a" id="a" value="{{questions[0].answers[0]}}" 
+          [(ngModel)]="quiz.question1"
+          ><br>
+          <label>{{questions[0].answers[1]}} </label>
+          <input type="radio" name="a" id="a" value="{{questions[0].answers[1]}}" 
+          [(ngModel)]="quiz.question1"
+          > 
+          <br>     <label>{{questions[0].answers[2]}} </label>
+          <input type="radio" name="a" id="a" value="{{questions[0].answers[2]}}" 
+          [(ngModel)]="quiz.question1"
+          ><br>
+        
+      
+          
+        </div>
+      </form>
+      
+    
+    
+      <form>
+        <div *ngIf="questions[1]">
+          <p>2:{{questions[1].prompt}}</p>
+          <label>{{questions[1].answers[0]}} </label>
+          <input type="radio" name="a" id="a" value="{{questions[1].answers[0]}}" 
+          [(ngModel)]="quiz.question2"
+          ><br>
+          <label>{{questions[1].answers[1]}} </label>
+          <input type="radio" name="a" id="a" value="{{questions[1].answers[1]}}" 
+          [(ngModel)]="quiz.question2"
+          
+          > 
+          <br>     
+          <label>{{questions[1].answers[2]}} </label>
+          <input type="radio" name="a" id="a" value="{{questions[1].answers[2]}}" 
+          [(ngModel)]="quiz.question2"
+          ><br>
+        </div>
+      </form>
+      
+      
+      
+    
+    
+      <form>
+        <div *ngIf="questions[2]">
+          <p>3:{{questions[2].prompt}}</p>
+        <label>{{questions[2].answers[2]}} </label>
+        <input type="radio" name="a" id="a" value="{{questions[2].answers[0]}}" 
+        [(ngModel)]="quiz.question3"
+        required
+        
+        ><br>
+        <label>{{questions[2].answers[1]}} </label>
+        <input type="radio" name="a" id="a" value="{{questions[2].answers[1]}}" 
+        [(ngModel)]="quiz.question3"
+        required
+        > 
+        <br>     <label>{{questions[2].answers[2]}} </label>
+        <input type="radio" name="a" id="a" value="{{questions[2].answers[2]}}" 
+        [(ngModel)]="quiz.question3"
+        required
+        
+        ><br>
+      </div>
+      
+      </form>
+      
+      <button (click)="submitgame()">submit</button>
+      <div *ngIf="errors.length>0">
+          <p *ngFor="let e of errors">{{e}}</p>
+      </div>
+      
+        
+    
+
+    
+  </div>
+
+  
+
+
+<p>this is troubleshooting shows you the correct answers in order would be diabled in production</p>
+  <p *ngFor="let q of questions">{{q.correct}}</p>
+  
+  

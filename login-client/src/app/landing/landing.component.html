@@ -1,0 +1,30 @@
+<h1>welcome {{activeuser.username}}</h1>
+
+<button (click)="viewaddquestion()">add question to bank</button>
+
+
+
+
+<h3 *ngIf="lastgame.user">congrats {{lastgame.user}} you scored {{lastgame.score}} for {{lastgame.percentage}} %</h3>
+
+<button (click)="makegame()">play new game</button>
+<input type="text" name="search" [(ngModel)]="searchtxt">
+<button (click)="search()"> search</button>
+
+
+
+<h1>Quizboard leaderboard</h1>
+<table>
+  <tr>
+    <th>username</th>
+    <th>score</th>
+    <th>percentage</th>
+  </tr>
+  <tr *ngFor="let g of games">
+    <td>{{g.user}}</td>
+    <td>{{g.score}}</td>
+    <td>{{g.percentage}}</td>
+
+  </tr>
+</table>
+

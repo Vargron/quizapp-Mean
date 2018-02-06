@@ -1,0 +1,18 @@
+
+
+<h1>search results</h1>
+<button (click)="goback()" >go back</button>
+
+<table>
+  <tr>
+    <th>username</th>
+    <th>score</th>
+    <th>percentage</th>
+  </tr>
+  <tr *ngFor="let g of games">
+    <td>{{g.user}}</td>
+    <td>{{g.score}}</td>
+    <td>{{g.percentage}}</td>
+
+  </tr>
+</table>

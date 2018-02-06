@@ -1,0 +1,19 @@
+<p>login componnet</p>
+
+<form (submit)='login()'>
+  <label>Enter your preffered user name:</label>
+  <input type="text" name="username"  
+  required
+  minlength="3"
+  maxlength="20"
+
+  [(ngModel)]="user.username"
+  #username="ngModel">
+  <input *ngIf="!username.errors" type="submit" >
+  <input *ngIf="username.errors" disabled type="submit">
+</form>
+<span *ngIf='username.errors' >
+  <p *ngIf='username.errors.minlength' >minimun length is 3 </p>
+</span>
+<p *ngIf="user.username[0]==' '">you cannot begin your username with a space</p>
+

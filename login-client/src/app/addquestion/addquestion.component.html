@@ -1,0 +1,82 @@
+<p>
+  addquestion works!
+</p>
+
+<form (submit)="submitquestion()">
+  <label>question prompt</label>
+  <input type="textarea" name='prompt' 
+  placeholder="your question here"
+  [(ngModel)]='new_question.prompt'
+  required
+  minlength="15"
+  #prompt="ngModel"
+  >
+  <span *ngIf='prompt.errors' >
+      <p *ngIf='prompt.errors.minlength' >minimun length is 15 </p>
+    </span>
+    <p *ngIf="new_question.prompt[0]==' '">you cannot begin your prompt with a space</p>
+    
+    
+    <br>
+  <label>correct answer</label>
+  <input type="text" name="correct"
+  placeholder="your correct answer here"
+  [(ngModel)]='new_question.correct'
+  required
+  minlength="3"
+  #correct="ngModel"
+  
+  >
+  <span *ngIf='correct.errors' >
+      <p *ngIf='correct.errors.minlength' >minimun length is 3 </p>
+    </span>
+    <p *ngIf="new_question.correct[0]==' '">you cannot begin your answer with a space</p>
+    
+    
+    <br>
+
+
+  <label>fake ans 1</label>
+  <input type="text" name="false1"
+  placeholder="your false answer here"
+  [(ngModel)]='new_question.false1'
+  required
+  minlength="3"
+  #false1="ngModel"
+  
+  
+  >
+  <span *ngIf='false1.errors' >
+      <p *ngIf='false1.errors.minlength' >minimun length is 3 </p>
+    </span>
+    <p *ngIf="new_question.false1[0]==' '">you cannot begin your answer with a space</p>
+    
+    
+    <br>
+  <label>fake ans 2</label>
+  <input type="text" name="false2"
+  
+  placeholder="your false answer here"
+  [(ngModel)]='new_question.false2'
+  required
+  minlength="3"
+  #false2="ngModel"
+  >
+  <span *ngIf='false2.errors' >
+      <p *ngIf='false2.errors.minlength' >minimun length is 3 </p>
+    </span>
+    <p *ngIf="new_question.false2[0]==' '">you cannot begin your answer with a space</p>
+    
+   
+    <br>
+  <input *ngIf="!prompt.errors && !correct.errors &&!false1.errors&&!false2.errors" type="submit">
+  <input *ngIf="prompt.errors ||correct.errors ||false1.errors ||false2.errors" type="submit" disabled>
+
+</form>
+
+{{new_question|json}}
+
+
+ 
+  
+  {{errs}}
